@@ -16,8 +16,7 @@ var romanToInt = function(s) {
 */
 inputArr.forEach((element, index , array ) => {
        if( element == 'I' ){
-                IntegerArr += 1;
-   
+                IntegerArr += 1;   
         }
 
         if( array[ index ] === 'I' && array[index + 1 ] === 'V'){
@@ -30,12 +29,7 @@ inputArr.forEach((element, index , array ) => {
 */
 
 
-
-
 });
-
-
-
 
 /*
 
@@ -43,8 +37,7 @@ inputArr.forEach((element, index , array ) => {
     If X is before C, subtract 10 from 100, else add 10 to 100
 
     If C is before D, subtract 100 from 500; else, add 100 to 500
-    If C is before M, subtract 100 from 1000, else add 100 to 1000
-    
+    If C is before M, subtract 100 from 1000, else add 100 to 1000    
     
     */
     return IntegerArr;
