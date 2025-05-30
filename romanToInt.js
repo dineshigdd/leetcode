@@ -16,101 +16,64 @@ var romanToInt = function(s) {
     };
 
     //get the input and separate it into an array
-    let IntOutput = 0;
+    let IntOutput = [];
     inputArr = s.split('');
-  
-    let repetitionRule = 0      
-/* 
-    print I if input is 1
-    print II if imput is 2
-    print III if input is 3
 
-*/
-<<<<<<< HEAD
     inputArr.forEach((element, index , array ) => {
 
+                //replace all the roman numerals with digits
+                switch( element ){
+                    case 'I':
+                        IntOutput[ index ] = romanToIntObj.I;
+                        break;
+                    case 'V':
+                        IntOutput[ index ] = romanToIntObj.V;
+                        break;
+                    case 'X':
+                          IntOutput[ index ] = romanToIntObj.X;
+                        break;
+                    case 'L':
+                          IntOutput[ index ] = romanToIntObj.L;
+                        break;
+                    case "C":
+                          IntOutput[ index ] = romanToIntObj.C;
+                        break;
+                    case "D":
+                          IntOutput[ index ] = romanToIntObj.D;
+                        break;
+                    case "M":
+                          IntOutput[ index ] = romanToIntObj.M;
+                        break;
+                }
+    })
+
+    console.log( IntOutput)
+    let output = IntOutput[0];
+    IntOutput.forEach((element, index, array) => {
+        /*  I can be placed before V (5) and X (10) to make 4 and 9. 
+            X can be placed before L (50) and C (100) to make 40 and 90. 
+            C can be placed before D (500) and M (1000) to make 400 and 900.*/
             
-        if( element == 'I' && array[index - 1 ] == "I" && array[index + 1 ] == "I"){        
-            
-                        if(  element == 'I' ){
-                                IntOutput = 1;
-                        }
-
-                        if( element == 'I' && array[index - 1 ] == "I" ){
-                                IntOutput  = 2;
-                        }
-
-                        if(element == 'I' && array[index - 1 ] == "I" && array[index + 1 ] == "I"){
-                                IntOutput  = 3;
-                        }
-                    //    IntOutput += romanToIntObj.I;
-                    //    repetitionRule +=1;
-
-                    //    if( repetitionRule > 3){
-                    //     IntOutput = 3
-                    //    }
-            }
-
+            // console.log( element)
+            // console.log( output)
         
+            if( array[ index + 1 ] <= element ){
+                output = output +  array[ index + 1 ];
+            }
 
-    /*  
-        If I is before V, subtract 1 from 5, else add 1 to 5
-        If I is before X, subtract 1 from 10, else add 1 to 10
-    */  
-
-            if(  element == 'V' ){       
-                IntOutput = 5;
-                if( array[ index - 1 ] == 'I' )             
-                     IntOutput = IntOutput - 1;
-            
-            
-                if( array[ index + 1 ] == 'I' )
-                    IntOutput = IntOutput + 1;
+            if( array[ index + 1 ] > element ){
+                output =  array[ index + 1 ] - output
             }
 
 
-<<<<<<< HEAD
-            /*If X is before L, subtract 10 from 50; else, add 10 to 50
-    If X is before C, subtract 10 from 100, else add 10 to 100*/
-
-             if( element == 'L' ){      
-                IntOutput  = 50; 
-                if( array[ index - 1 ] == 'X' ) {                         
-                     IntOutput = IntOutput - 10;
-                }
-            
-                if( array[ index + 1 ] == 'X'){               
-                    IntOutput = IntOutput + 10;
-                }
-            }
-
-
-            
-
-
-            
-=======
-});
-
->>>>>>> b0b13e3a34e88c8afaa4313bd2658b1dcb3067ef
-/*
-
+    })
     
-
-    If C is before D, subtract 100 from 500; else, add 100 to 500
-    If C is before M, subtract 100 from 1000, else add 100 to 1000    
-    
-    */
-
-    });
-
-
-
-
-    return IntOutput;
+    return output;
 };
 
-console.log(romanToInt('III'));
-console.log(romanToInt('IV'));
-console.log(romanToInt('VI'));
-console.log( romanToInt('LVIII'))
+// console.log(romanToInt('VIII'));
+// console.log(romanToInt('IV'));
+// console.log(romanToInt('VI'));
+// console.log( romanToInt('LVIII'))
+console.log( romanToInt('XMX'))
+// console.log( romanToInt('MCMXCIV'))
