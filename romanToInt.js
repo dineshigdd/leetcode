@@ -26,7 +26,9 @@ var romanToInt = function(s) {
     print III if input is 3
 
 */
+<<<<<<< HEAD
     inputArr.forEach((element, index , array ) => {
+
             
         if( element == 'I' && array[index - 1 ] == "I" && array[index + 1 ] == "I"){        
             
@@ -67,6 +69,7 @@ var romanToInt = function(s) {
             }
 
 
+<<<<<<< HEAD
             /*If X is before L, subtract 10 from 50; else, add 10 to 50
     If X is before C, subtract 10 from 100, else add 10 to 100*/
 
@@ -86,13 +89,16 @@ var romanToInt = function(s) {
 
 
             
+=======
+});
+
+>>>>>>> b0b13e3a34e88c8afaa4313bd2658b1dcb3067ef
 /*
 
     
 
     If C is before D, subtract 100 from 500; else, add 100 to 500
-    If C is before M, subtract 100 from 1000, else add 100 to 1000
-    
+    If C is before M, subtract 100 from 1000, else add 100 to 1000    
     
     */
 
