@@ -48,7 +48,8 @@ var romanToInt = function(s) {
     })
 
     console.log( IntOutput)
-    let output = IntOutput[0];
+    let output = 0;
+    let addOutput = IntOutput[0];
     IntOutput.forEach((element, index, array) => {
         /*  I can be placed before V (5) and X (10) to make 4 and 9. 
             X can be placed before L (50) and C (100) to make 40 and 90. 
@@ -56,18 +57,24 @@ var romanToInt = function(s) {
             
             // console.log( element)
             // console.log( output)
-        
+        //additve principle
             if( array[ index + 1 ] <= element ){
-                output = output +  array[ index + 1 ];
+                addOutput = addOutput +  array[ index + 1 ];
             }
 
-            if( array[ index + 1 ] > element ){
-                output =  array[ index + 1 ] - output
-            }
+            // if( array[ index + 1 ] > element ){
+            //     output =  array[ index + 1 ] - output
+            // }
 
 
     })
+
+//to do
+// get the part of the IntOutput array that has the subtractive pronciple
+    let subOutput = IntOutput.slice() 
     
+
+
     return output;
 };
 
@@ -75,5 +82,5 @@ var romanToInt = function(s) {
 // console.log(romanToInt('IV'));
 // console.log(romanToInt('VI'));
 // console.log( romanToInt('LVIII'))
-console.log( romanToInt('XMX'))
+console.log( romanToInt('LXXXIV'))
 // console.log( romanToInt('MCMXCIV'))
