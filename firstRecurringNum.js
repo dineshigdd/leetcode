@@ -40,10 +40,24 @@ class Solution{
         return undefined;
         
     }
+
+
+    firstRecurringNumNestLoop( arr ){
+        for( let i = 0 ; i < arr.length ; i++ ){
+              for( let j = i + 1 ; j < arr.length ; j++ ){
+                    if( arr[ i ] === arr[j]){
+                        return arr[i]
+                    }
+            
+             }
+        }
+        return undefined;
+    }
 }
 
 const solution = new Solution();
 // console.log( solution.firstRecurringNum( [2,5,1,2,3,5,1,2,4]))
 // console.log( solution.firstRecurringNum( [2,1,1,2,3,5,1,2,4]))
 // console.log( solution.firstRecurringNum( [2,3,4,5]))
-console.log( solution.firstRecurringNum( [2,5,5,2,3,5,1,2,4]))
+// console.log( solution.firstRecurringNum( [2,5,5,2,3,5,1,2,4]))
+console.log( solution.firstRecurringNumNestLoop( [2,5,5,2,3,5,1,2,4]))
