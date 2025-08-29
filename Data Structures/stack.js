@@ -49,8 +49,8 @@ class Stack {
          */
        }else if( this.top === this.bottom ){
             // console.log( this.top)
-             console.log( "bottom")
-             console.log(  this.bottom)
+            //  console.log( "bottom")
+            //  console.log(  this.bottom)
             return null;
        }
       
@@ -65,12 +65,13 @@ const myStack = new Stack();
 myStack.push('first')
 myStack.push('second')
 myStack.push('third')
-
+myStack.push('fourth')
+console.log( myStack)
 // console.log( myStack.pop())
 // console.log( myStack.pop())
 // console.log( myStack.peek())
-console.log( myStack.pop())
-console.log( myStack.pop())
-console.log( myStack.pop())
-console.log( myStack.pop())
-console.log( "top:" + myStack.peek())
+// console.log( myStack.pop())
+// console.log( myStack.pop())
+// console.log( myStack.pop())
+// console.log( myStack.pop())
+// console.log( "top:" + myStack.peek())
