@@ -37,20 +37,26 @@ class NumArray {
         this.array = value;
     }
      //create a sub array from left,right
-    sumRange = function(left, right) {
-        let subarray = [];
-        for( let i = left ; i <= right  ; i++ ){
-             subarray = this.array.slice(left, right + 1 )
+    sumRange(left, right) {
+        
+        let sum = 0;
+        
+        const subarray = this.array.slice(left, right + 1 )             
+
+        for( let i = 0; i < subarray.length; i++ ){
+            sum = sum + subarray[i]
         }
 
-        return subarray;
+        return sum
     }
 
    
-
+   
 
     //get the sum of the sb array
 };
 
 const numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
-console.log( numArray.sumRange(0, 2)); 
+console.log( numArray.sumRange(0, 2))// return (-2) + 0 + 3 = 1
+console.log(numArray.sumRange(2, 5)); // return 3 + (-5) + 2 + (-1) = -1
+console.log(numArray.sumRange(0, 5));
