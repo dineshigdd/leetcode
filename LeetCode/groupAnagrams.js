@@ -19,6 +19,14 @@ class Solution {
         return sorted1 === sorted2;
     }
 
+    /*
+    find the anagram
+    put anagram to an subarray
+    flag the anagram
+
+
+
+    */
     groupAnagrams(strs) {
        let output = [];
        
@@ -31,19 +39,18 @@ class Solution {
           
 
         for( let i = 0; i < strs.length  ; i++ ){    
-              let subArray = [];
+            let subArray = [];
+            
+              
                 for( let j = i + 1; j < strs.length; j++ ){
                     console.log( `compare ${ strs[i] } with ${ strs[j]}`)
 
-                    if( this.areAnagrams(strs[i], strs[j] ) ){
-                        subArray.push(strs[i] , strs[j])                        
-                        strs[j] = '*';
+                    if( this.areAnagrams(strs[i], strs[j] ) ){ //find the angram
+                        subArray.push(strs[i] , strs[j])     //put into an sub array                   
+                        strs[j] = '*';          //flag the anagram
                     }
                 }
-       
-            if(  strs[i] !== '*' ){
-              subArray.push(strs[i] )
-            }
+             
             // subArray.push(strs[i] )
              output.push( subArray)
         }
