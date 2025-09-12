@@ -36,8 +36,7 @@ class Solution {
 
         for( let i = 0; i < strs.length  ; i++ ){    
             let subArray = [];
-            console.log( i)
-            console.log( strs[i])
+           
             if( strs[i] !== '*'){
                 
                 subArray.push(strs[i] )
